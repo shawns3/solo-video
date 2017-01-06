@@ -1,0 +1,27 @@
+FROM solo
+
+# install development tools
+RUN apt-get update && apt-get install -y \
+apt-utils \
+emacs24-nox \
+less \
+locate \
+nano \
+python-software-properties \
+software-properties-common \
+sudo \
+tmux
+
+# install ffmpeg lib so we can test our code with h.264 input
+RUN add-apt-repository ppa:mc3man/gstffmpeg-keep && \
+apt-get update && \
+apt-get install -y \
+gstreamer0.10-ffmpeg
+
+# setup development directory
+RUN mkdir /root/workspace
+
+# install the last minute setup script
+COPY last-minute-setup.sh /root/last-minute-setup.sh
+RUN chmod 755 /root/last-minute-setup.sh
+ENTRYPOINT ["/root/last-minute-setup.sh"]

@@ -1,0 +1,4 @@
+test-files/*
+video-streamer/images/*.jpg
+video-streamer/*.o
+video-streamer/video-streamer

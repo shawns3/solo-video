@@ -1,0 +1,14 @@
+FROM ubuntu:14.04
+
+RUN apt-get update && apt-get install -y \
+gstreamer0.10-plugins-base \
+gstreamer0.10-plugins-base-apps \
+gstreamer0.10-plugins-base-dbg \
+gstreamer0.10-plugins-good \
+libcanberra-gtk-module \
+libgstreamer0.10-0 \
+libgstreamer0.10-dev \
+libgstreamer-plugins-base0.10-0 \
+libgstreamer-plugins-base0.10-dev \
+libopencv-dev \
+gstreamer0.10-plugins-ugly
