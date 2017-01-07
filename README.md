@@ -1,4 +1,4 @@
-# solo-video
+# Custom 3DR Solo Quadcopter Video Pipeline
 
 This code is a work in progress. Your mileage may vary.
 
@@ -10,7 +10,7 @@ processing onboard the 3DR SOLO quadcopter. Currently, this replaces
 the default onboard video streaming service with a custom service that
 is compatible with the original service and additionally implements a
 custom image processing routine. The current routine performs face
-detection utilizing the Haar Cascades detector implement in OpenCV.
+detection utilizing the Haar Cascades detector implemented in OpenCV.
 
 
 # Testing the Code
@@ -46,7 +46,10 @@ make
 
 ## Setup and Configuration
 
-- TODO: I need to update these setup instructions as these are not complete.
+- TODO: I need to update these setup instructions as they are not complete.
+- Stop the original video streaming service
+  - comment out the VIDLAUNCH line in inittab
+  - reboot
 - Install the needed packages onboard.
 ``` sh
 smart channel --add cortexa9hf_vfp_neon type=rpm-md baseurl=http://downloads.yoctoproject.org/releases/yocto/yocto-1.5.1/rpm/cortexa9hf_vfp_neon/ -y
